@@ -25,14 +25,13 @@ Table of contents
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
-Why FlashCardAI?
+Why FlashCardAI? #why-flashcardai
 FlashCardAI reduces the time you spend creating study materials by automating flashcard generation and optimizing review schedules using spaced repetition. It’s designed for students, professionals, and lifelong learners who want an efficient, focused way to remember what matters.
 
 Key features
 - AI-assisted flashcard generation from:
   - Plain text or notes
   - URLs / articles (optional)
-  - Copy/paste or file import
 - Multiple study modes:
   - Learn mode (guided study)
   - Review mode (spaced repetition)
@@ -43,11 +42,8 @@ Key features
 - Personalization:
   - Difficulty settings
   - Custom study schedules and notifications
-- Analytics:
-  - Progress tracking and simple stats
 - Authentication (optional):
   - Local accounts or OAuth providers (Google/GitHub)
-- Offline support and responsive design
 
 How it works
 1. Create or import a deck.
@@ -56,19 +52,14 @@ How it works
 4. Export or share decks with classmates or colleagues.
 
 Tech stack
-This README intentionally keeps the stack flexible so you can adapt it to your actual implementation. A typical stack for FlashCardAI might include:
-- Frontend: React or Next.js (React for SPA, Next.js for SSR)
-- Styling: Tailwind CSS, Chakra UI, or plain CSS
-- Backend: Node.js + Express, or serverless functions (Vercel/Netlify)
-- Authentication: NextAuth.js, Firebase Auth, or custom JWT
-- Database: PostgreSQL, MongoDB, or SQLite
-- AI: OpenAI API (GPT-3.5 / GPT-4) or another LLM provider
-- Hosting: Vercel, Netlify, Render, or any cloud provider
+This README intentionally keeps the stack flexible so you can adapt it to your actual implementation. A typical stack for FlashCardAI includes:
+- Frontend: React
+- Styling: Tailwind CSS
+- Authentication: Firebase Auth
+- AI: Ollama locally ran look at backend for more details
 
-Replace the above with the actual technologies used in this repository.
 
 Getting started (local)
-These are example steps. Adjust commands to match the actual package manager, scripts, and filesystem in the repo.
 
 1. Clone the repo
    git clone https://github.com/Mamadi-exe/FlashCardAI_website.git
@@ -94,21 +85,6 @@ These are example steps. Adjust commands to match the actual package manager, sc
    pnpm dev
 
 6. Open http://localhost:3000 (or the port your app uses)
-
-Environment variables
-Common environment variables you may need to set. Update names to match your implementation.
-
-- OPENAI_API_KEY — Your OpenAI API key (if using OpenAI)
-- NEXT_PUBLIC_SITE_URL — https://localhost:3000 (for client-side usage)
-- DATABASE_URL — Connection string for your database (Postgres, MongoDB, etc.)
-- JWT_SECRET — Secret used for signing auth tokens
-- SENTRY_DSN — Optional: error tracking DSN
-
-Example .env (do not commit secrets)
-OPENAI_API_KEY=sk-...
-NEXT_PUBLIC_SITE_URL=http://localhost:3000
-DATABASE_URL=postgres://user:pass@localhost:5432/flashcardai
-JWT_SECRET=replace-with-a-secure-random-string
 
 Deployment
 - Vercel
@@ -144,8 +120,6 @@ Roadmap (example)
 - Mobile app or improved PWA offline support
 - Advanced analytics and learning recommendations
 
-License
-This repository is available under the MIT License. See [LICENSE](LICENSE) for details. If you prefer another license, replace this section with the correct license text.
 
 Contact
 Maintained by Mamadi-exe — https://github.com/Mamadi-exe
@@ -156,5 +130,3 @@ Acknowledgements
 - Inspired by spaced repetition systems such as Anki and SuperMemo
 - Thanks to the open-source community and AI providers that make rapid prototyping possible
 
-Final notes
-This README is intentionally practical and approachable. Update sections like Tech stack, Environment variables, and Commands to exactly match the project's implementation. If you’d like, I can tailor this README to match the repo's actual files and scripts — just tell me which framework and scripts the project uses or grant me permission to inspect the repository.
