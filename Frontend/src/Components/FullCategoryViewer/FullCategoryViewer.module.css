@@ -1,0 +1,466 @@
+/* In your CSS */
+:root {
+  --selection-bg: #55ff00;
+  --selection-color: #ffffff;
+}
+
+::selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-color);
+}
+
+::-moz-selection {
+  background-color: var(--selection-bg);
+  color: var(--selection-color);
+}
+
+.fullscreenwrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  padding: 2rem;
+  overflow-y: auto;
+  z-index: 1000;
+  animation: fadeIn 0.4s ease-in;
+}
+
+.fullscreenheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.closebtn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.cardgrid {  
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: start;
+  align-content: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.flipcard {
+  background: transparent;
+  perspective: 1000px;
+}
+
+.flipinner {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flipcard:hover .flipinner {
+  transform: rotateY(180deg);
+}
+
+.flipfront, .flipback {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flipfront {
+  background-color: #f0f0f0;
+}
+
+.flipback {
+  background-color: #dfefff;
+  transform: rotateY(180deg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+.cardContainer {
+  width: 340px;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.cardContainer.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.front {
+  background: linear-gradient(135deg, #eef2f3, #ffffff);
+  z-index: 2;
+}
+
+.back {
+  background: linear-gradient(135deg, #fff9f0, #ffe9c6);
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #4f46e5;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  color: #333;
+}
+
+.tip {
+  margin-top: 1rem;
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.manageBtn{
+  display: flex;
+  width: 100%;
+  padding: 10px 0;
+  margin: 0 0 10px 0;
+}
+.editBtn,
+.confirmBtn {
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #4f46e5;
+  color: white;
+  transition: background 0.3s ease;
+  margin: 0 10px;
+}
+
+.editBtn:hover,
+.confirmBtn:hover {
+  background-color: #3730a3;
+}
+
+svg{
+  display: inline-block;
+}
+.textBubbleWrapper {
+  margin: 1rem 0;
+}
+
+.textBubbleList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.bubble {
+  background-color: #eef6ff;
+  color: #0369a1;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.bubble h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #111827; /* gray-900 */
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 0.25rem;
+}
+
+.bubble h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #1f2937; /* gray-800 */
+  border-left: 4px solid #3b82f6;
+  padding-left: 0.5rem;
+}
+
+/* Paragraphs */
+.bubble p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #374151; /* gray-700 */
+}
+
+/* Lists */
+.bubble ul,
+.bubble ol {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bubble ul li,
+.bubble ol li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.bubble ul li::before {
+  content: "•";
+  color: #3b82f6;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Tables */
+.bubble table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.bubble th,
+.bubble td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.bubble thead {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Buttons (if included in HTML) */
+.bubble button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.bubble button:hover {
+  background-color: #2563eb;
+}
+
+/* Optional: highlight strong and em */
+.bubble strong {
+  color: #111827;
+  font-weight: bold;
+}
+
+.bubble em {
+  font-style: italic;
+  color: #6b7280;
+}
+.wysiwygEditor {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.toolbar {
+  display: flex;
+  gap: 4px;
+  padding: 8px;
+  background: #f0f0f0;
+  border-radius: 4px 4px 0 0;
+  flex-wrap: wrap;
+}
+
+.toolbar button {
+  padding: 4px 8px;
+  border: none;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+
+.toolbar button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.editableContent {
+  min-height: 100px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  outline: none;
+}
+
+.editableContent:focus {
+  border-color: #60a5fa;
+}
+
+.editableContent table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 8px 0;
+}
+
+.editableContent table, 
+.editableContent th, 
+.editableContent td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.editableContent ul, 
+.editableContent ol {
+  padding-left: 20px;
+}
+
+.headingSelect {
+  padding: 4px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin-right: 4px;
+}
+
+.editableContent a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.editableContent h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.editableContent h2 {
+  font-size: 1.5em;
+  margin: 0.75em 0;
+}
+
+.editableContent h3 {
+  font-size: 1.17em;
+  margin: 0.83em 0;
+}
+
+.editableContent h4 {
+  font-size: 1em;
+  margin: 1.12em 0;
+}
+
+.manageDropdown {
+  position: absolute;
+  display: inline-block;
+  left: 320px;
+  border: 1px solid #d7d7d7;
+  border-radius: var(--radius);
+  bottom: 260px;
+}
+
+.manageMenu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    position: absolute;
+    bottom: 30px;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 6px;
+    padding: 0;
+    pointer-events: none;
+    width: max-content;
+    max-width: 90vw;
+}
+
+.manageText {
+  display: inline-flex;
+  font-size: 0.8rem;
+  padding: 4px;
+}
+.manageText::after {
+  display: inline-block;
+  margin-left: .5rem;
+  transition: transform var(--transition);
+}
+
+.manageDropdown:hover .manageText::after  {
+  transform: rotate(-180deg);
+  
+}
+
+.manageDropdown:hover .manageMenu {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.dropdownItem {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.dropdownItem:hover {
+    background-color: #4f46e5;
+    color: white;
+}

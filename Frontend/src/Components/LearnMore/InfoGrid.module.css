@@ -1,0 +1,23 @@
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.icon {
+  margin-bottom: 1rem;
+  color: #4f46e5; 
+}
+
+.more-info {
+  color: #666;
+  font-style: italic;
+}

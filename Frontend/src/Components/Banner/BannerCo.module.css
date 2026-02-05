@@ -1,0 +1,167 @@
+.Banner{
+  width: 100%;
+  height: 70vh;
+  margin-top: 200px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+.BannerContent {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.StartButton {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.StartButton {
+  --primary-color: #111;
+  --hovered-color: #c84747;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.StartButton p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color);
+}
+
+.StartButton::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.StartButton p::before {
+  position: absolute;
+  /*   box-sizing: border-box; */
+  content: "Start";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.StartButton:hover::after {
+  width: 100%;
+}
+
+.StartButton:hover p::before {
+  width: 100%;
+}
+
+.StartButton:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color);
+}
+
+.StartButton svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  margin-bottom: 150px;
+}
+
+.cardContainer {
+  width: 340px;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.cardContainer.flipped .card {
+  transform: rotateY(180deg);
+}
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.front {
+  background: linear-gradient(135deg, #eef2f3, #ffffff);
+  z-index: 2;
+}
+
+.back {
+  background: linear-gradient(135deg, #fff9f0, #ffe9c6);
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #4f46e5;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-align: center;
+  color: #333;
+}
+
+.tip {
+  margin-top: 1rem;
+  color: #888;
+  font-size: 0.9rem;
+  text-align: center;
+}
