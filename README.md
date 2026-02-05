@@ -2,9 +2,7 @@
 
 A modern, user-friendly website that helps learners create, practice, and retain knowledge using AI-generated flashcards and proven study techniques. FlashCardAI transforms plain text, notes, or articles into memorization-ready flashcards, supports multiple study modes, and integrates spaced-repetition to help information move from short-term to long-term memory.
 
-> Note: This README is written to be professional and human-friendly. Replace any placeholders (site URL, commands, environment variables) with values that match your repository and deployment.
-
-[Live demo](https://your-live-site.example.com) • [Report a bug](https://github.com/Mamadi-exe/FlashCardAI_website/issues/new)
+[Report a bug](https://github.com/Mamadi-exe/FlashCardAI_website/issues/new)
 
 Badges
 - Build: ![build status](https://img.shields.io/badge/build-passing-brightgreen)
@@ -25,7 +23,7 @@ Table of contents
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
-Why FlashCardAI? #why-flashcardai
+Why FlashCardAI?
 FlashCardAI reduces the time you spend creating study materials by automating flashcard generation and optimizing review schedules using spaced repetition. It’s designed for students, professionals, and lifelong learners who want an efficient, focused way to remember what matters.
 
 Key features
