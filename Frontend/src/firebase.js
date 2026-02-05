@@ -8,7 +8,7 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyC1TwC9g3NIXbXDnslWbH8sQIVO1vHrFI4",
+  apiKey: "yourkey",
   authDomain: "notes-app-135eb.firebaseapp.com",
   projectId: "notes-app-135eb",
   storageBucket: "notes-app-135eb.firebasestorage.app",
